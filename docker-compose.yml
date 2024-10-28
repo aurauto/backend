@@ -1,0 +1,127 @@
+services:
+  # APP
+  app:
+    image: ${DOCKERIMAGE:?DOCKERIMAGE is required}
+    container_name: aurauto_app
+    build:
+      context: .
+      dockerfile: ${DOCKERFILE:?DOCKERFILE is required}
+#    command: python manage.py migrate
+    ports:
+      - target: 80
+        published: 7001
+        mode: host
+    depends_on:
+      mysql:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file:
+      - local.env
+    volumes:
+      - ./aurauto:/app/aurauto:ro
+    networks:
+      aurauto-network:
+        aliases:
+          - aurauto_api
+    healthcheck:
+      test: [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://0.0.0.0:80/health",
+          "||",
+          "exit 1"
+      ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+  # WORKER
+  worker:
+    image: ${DOCKERIMAGE:?DOCKERIMAGE is required}
+    build:
+      context: .
+      dockerfile: ${DOCKERFILE:?DOCKERFILE is required}
+    command: celery -A parse worker --loglevel=info --beat -s /tmp/celerybeat-schedule
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file:
+      - local.env
+    volumes:
+      - ./aurauto:/app/aurauto:ro
+    networks:
+      aurauto-network:
+        aliases:
+          - aurauto_api
+    restart: unless-stopped
+  # REDIS
+  redis:
+    image: redis:alpine
+    env_file:
+      - local.env
+    volumes:
+      - redis-data:/data
+    ports:
+      - 6379:6379
+    networks:
+      - aurauto-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+  # POSTGRES
+  postgres:
+    image: postgres:alpine
+    user: postgres
+    env_file:
+      - local.env
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - target: 5432
+        published: 5432
+        mode: host
+    networks:
+      - aurauto-network
+    healthcheck:
+      test: ["CMD", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+  # MYSQL
+  mysql:
+    image: mysql:latest
+    user: mysql
+    env_file:
+      - local.env
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - target: 3306
+        published: 3306
+        mode: host
+    networks:
+      - aurauto-network
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+networks:
+  aurauto-network:
+volumes:
+  redis-data:
+  postgres-data:
+  mysql-data:

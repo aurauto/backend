@@ -1,0 +1,66 @@
+{
+    "settings": {
+        "http": {
+            "header_read_timeout": 60,
+            "body_read_timeout": 60,
+            "send_timeout": 60,
+            "idle_timeout": 180,
+            "max_body_size": 52428800,
+            "discard_unsafe_fields": true
+        }
+    },
+    "listeners": {
+        "*:80": {
+            "pass": "routes"
+        }
+    },
+    "routes": [
+        {
+            "match": {
+                "uri": [
+                    "/api/*"
+                ]
+            },
+            "action": {
+                "pass": "applications/django"
+            }
+        },
+        {
+            "match": {
+                "uri": [
+                    "/*"
+                ]
+            },
+            "action": {
+                "pass": "applications/wordpress"
+            }
+        }
+    ],
+    "applications": {
+        "django": {
+            "type": "python 3.12",
+            "path": "/app/aurauto",
+            "module": "main.wsgi",
+            "processes": {
+                "max": 15,
+                "spare": 5
+            }
+        },
+        "wordpress": {
+            "type": "php",
+            "processes": {
+                "max": 15,
+                "spare": 5
+            },
+            "targets": {
+                "direct": {
+                    "root": "/var/www/html/"
+                },
+                "index": {
+                    "root": "/var/www/html/",
+                    "script": "index.php"
+                }
+            }
+        }
+    }
+}
