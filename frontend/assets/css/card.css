@@ -1,0 +1,1748 @@
+.logo-block-wrap {
+	display    : flex;
+	align-items: center;
+}
+
+
+
+.block_inner {
+	max-width    : 1240px;
+	margin       : 0px auto;
+/* 	padding-left : 80px;
+	padding-right: 80px; */
+}
+
+
+.content {
+	flex-grow      : 0;
+	display        : flex;
+	flex-direction : column;
+	justify-content: center;
+	align-items    : center;
+	min-height     : auto;
+	margin-left: auto;
+	margin-right: auto;
+    max-width: 1240px;
+    padding-bottom: 60px;
+}
+
+
+.content-bread-wrap {
+	display       : flex;
+	flex-direction: column;
+	width         : 100%;
+/* 	padding-left  : 80px;
+	padding-right : 80px; */
+}
+
+.bread-crumbs-list {
+	display   : flex;
+	list-style: none;
+}
+
+.bread-crumbs-li {
+	font-family   : Roboto;
+	font-size     : 15px;
+	font-weight   : 400;
+	line-height   : 40px;
+	letter-spacing: 0em;
+	text-align    : left;
+	margin-right  : 20px;
+	color         : #969696;
+}
+
+.bread-crumbs-li:first-child {
+	list-style: none;
+}
+
+
+.auto-belarus__wrap {
+	display        : flex;
+	/* height         : 100px; */
+	justify-content: space-between;
+	width          : 100%;
+
+	margin-bottom: 20px;
+}
+
+.auto-belarus {
+	width         : auto;
+	color         : #000000;
+	/* height        : 67px; */
+	font-family   : Roboto;
+	font-size     : 48px;
+	font-weight   : 700;
+	line-height   : 65px;
+	letter-spacing: 0em;
+	text-align    : left;
+}
+
+.auto-belarus__total {
+	width         : 295px;
+	height        : 67px;
+	font-family   : Roboto;
+	font-size     : 48px;
+	font-weight   : 700;
+	line-height   : 65px;
+	letter-spacing: 0em;
+	text-align    : right;
+	white-space: nowrap;
+}
+
+#money {
+	height: 29px;
+}
+
+.money-choose {
+	display    : flex;
+	height     : 50px;
+	margin-left: 28px;
+	padding-top: 17px;
+	position: relative;
+}
+
+.money {
+	width       : 9px;
+	height      : 9px;
+	transform   : rotate(135deg);
+	flex-shrink : 0;
+	stroke-width: 1px;
+	stroke      : #000;
+}
+
+.currency-name {
+	display        : flex;
+	width          : 70px;
+	height         : 29px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #000;
+	text-align     : center;
+	font-family    : Roboto;
+	font-size      : 16px;
+	font-style     : normal;
+	font-weight    : 400;
+	line-height    : normal;
+}
+
+.rub {
+	display        : flex;
+	width          : 44px;
+	height         : 29px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #000;
+	text-align     : center;
+	font-family    : Roboto;
+	font-size      : 32px;
+	font-style     : normal;
+	font-weight    : 400;
+	line-height    : normal;
+}
+.rub select{
+	font-size      : 32px;
+	border: 0;
+	width: fit-content;
+	text-align: center;
+	position: absolute;
+    left: 0;
+    right: 0;
+    text-align: right;
+    width: 100%;
+    background: transparent;
+}
+}
+.rub select:focus-visible {
+	outline: 0;
+}
+.main-block-auto {
+	display        : flex;
+	width          : 100%;
+	justify-content: space-between;
+}
+
+.block-auto-car-information {
+	display       : flex;
+	flex-direction: column;
+	width         : 908px;
+}
+
+.block-car {
+	width: 905px;
+}
+
+.car-img {
+	width      : 905px;
+	height     : 509px;
+	flex-shrink: 0;
+}
+.car-img .slick-list, .car-img .slick-list .slick-track{
+  width: 100%;
+  height: 100%;
+}
+.car-img .slick-list .slick-track img {
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.car-gallery {
+	display    : flex;
+	width      : 905px;
+	height     : 194px;
+	flex-shrink: 0;
+	margin-top : 9px;
+	flex-wrap  : wrap;
+}
+.car-gallery .slick-list {
+  width: 100%;
+}
+.car-block {
+	display     : flex;
+	position    : relative;
+	overflow    : hidden;
+	width       : 108px;
+	height      : 77px;
+	margin-right: 5px;
+}
+.car-block img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+/* .car-1 {
+	position: absolute;
+	top     : -10px;
+
+}
+
+.car-2 {
+	position: absolute;
+	top     : -10px;
+	left    : -114px;
+}
+
+.car-3 {
+	position: absolute;
+	top     : -10px;
+	left    : -228px;
+}
+
+.car-4 {
+	position: absolute;
+	top     : -10px;
+	left    : -341px;
+}
+
+.car-5 {
+	position: absolute;
+	top     : -10px;
+	left    : -453px;
+}
+
+.car-6 {
+	position: absolute;
+	top     : -10px;
+	left    : -568px;
+}
+
+.car-7 {
+	position: absolute;
+	top     : -10px;
+	left    : -681px;
+}
+
+.car-8 {
+	position: absolute;
+	top     : -10px;
+	left    : -793px;
+}
+
+.car-9 {
+	position: absolute;
+	top     : -112px;
+}
+
+.car-10 {
+	position: absolute;
+	left    : -114px;
+	top     : -112px;
+}
+
+.car-11 {
+	position: absolute;
+	left    : -228px;
+	top     : -112px;
+}
+
+.car-12 {
+	position: absolute;
+	top     : -112px;
+	left    : -341px;
+}
+
+.car-13 {
+	position: absolute;
+	top     : -112px;
+	left    : -453px;
+}
+
+.car-14 {
+	position: absolute;
+	top     : -112px;
+	left    : -568px;
+}
+
+.car-15 {
+	position: absolute;
+	top     : -112px;
+	left    : -681px;
+}
+
+.car-16 {
+	position: absolute;
+	top     : -112px;
+	left    : -795px;
+} */
+
+.block-car__technical-describes {
+	display       : flex;
+	flex-direction: column;
+	width         : 557px;
+	flex-shrink   : 0;
+}
+
+.block-car__technical-describes_headline {
+	display        : flex;
+	width          : 583px;
+	height         : 97px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #000;
+	font-family    : Roboto;
+	font-size      : 32px;
+	font-style     : normal;
+	font-weight    : 700;
+	line-height    : normal;
+}
+
+.technical-describes-block-list {
+	display: flex;
+}
+
+.technical-describes__list {
+	margin-left: 20px;
+	width      : 557px;
+	height     : 245px;
+	flex-shrink: 0;
+}
+
+.technical-describes__item {
+	color      : #000;
+	font-family: Roboto;
+	font-size  : 17px;
+	font-style : normal;
+	font-weight: 400;
+	line-height: 35px;
+	/* 205.882% */
+}
+
+.All-options {
+	display             : flex;
+	width               : 233px;
+	height              : 22px;
+	flex-direction      : column;
+	justify-content     : center;
+	flex-shrink         : 0;
+	color               : #EF7820;
+	font-family         : Roboto;
+	font-size           : 13px;
+	font-style          : normal;
+	font-weight         : 400;
+	line-height         : normal;
+	text-decoration-line: underline;
+}
+
+.describe-text {
+	display        : flex;
+	width          : 583px;
+	height         : 97px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #000;
+	font-family    : Roboto;
+	font-size      : 32px;
+	font-style     : normal;
+	font-weight    : 700;
+	line-height    : normal;
+}
+
+.describe-text-mobile {
+	display: none;
+}
+
+.credit-conditions-block {
+	width      : 907px;
+	/* height     : 554px; */
+	flex-shrink: 0;
+	color      : #000;
+	font-family: Roboto;
+	font-size  : 16px;
+	font-style : normal;
+	font-weight: 400;
+	line-height: 30px;
+}
+
+.credit-conditions-block__item {
+	list-style: none;
+}
+
+.credit-conditions-block__adertisements {
+	margin-top: 40px;
+}
+
+.cars-offers-block {
+	display   : flex;
+	flex-wrap : wrap;
+	margin-top: 0px;
+  gap: 17px;
+}
+
+/* .car-offer:nth-child(3),
+.car-offer:nth-child(6),
+.car-offer:nth-child(9),
+.car-offer:nth-child(13) {
+	margin-right: 0;
+}
+
+.car-offer:nth-child(4),
+.car-offer:nth-child(5),
+.car-offer:nth-child(6),
+.car-offer:nth-child(7),
+.car-offer:nth-child(8),
+.car-offer:nth-child(9),
+.car-offer:nth-child(10),
+.car-offer:nth-child(11),
+.car-offer:nth-child(12),
+.car-offer:nth-child(13) {
+	margin-top: 29px;
+}
+
+.car-offer:nth-child(6) {
+	margin-right: 18px;
+}
+
+.car-offer:nth-child(7),
+.car-offer:nth-child(12) {
+	margin-right: 0;
+}
+
+.car-offer:last-child {
+	margin-right: 0;
+}
+
+.car-offer:nth-child(5) {
+	margin-right: 0;
+} */
+
+.car-picture-block {
+	display : flex;
+	position: relative;
+}
+
+.like-block {
+	width          : 40px;
+	height         : 40px;
+	display        : none;
+	position       : absolute;
+	right          : 0;
+	top            : 0;
+	flex-shrink    : 0;
+	border-radius  : 0px 5px 5px 5px;
+	background     : rgba(239, 120, 32, 0.45);
+	justify-content: center;
+	align-items    : center;
+}
+
+.car-offer {
+	width       : 291px;
+	flex-shrink : 0;
+	/* margin-right: 17px; */
+	position    : relative;
+}
+
+.car-picture__block-img {
+	display       : flex;
+	flex-direction: column;
+}
+
+.car-picture-block {
+	display: none;
+}
+
+.car-offer__messangers-block {
+	display: none;
+}
+
+.you-looked-block__cars {
+	display: flex;
+}
+
+.you-looked-car__block-describe {
+	display       : flex;
+	flex-direction: column;
+	margin-left   : 0;
+}
+
+.you-looked-car {
+	display       : flex;
+	flex-direction: column;
+	width         : 170px;
+	flex-shrink   : 0;
+	margin-right  : 20px;
+}
+
+.you-looked-car:last-child {
+	margin-right: 0;
+}
+.you-looked-car img {
+  width: 100%;
+  height: 108px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.car-picture__block-img {
+	display       : flex;
+	flex-direction: column;
+	width         : 291px;
+  height: 204px;
+}
+.car-picture__block-img>img{
+  width: 100%;
+  height: 204px;
+  min-height: 204px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.car-picture {
+	width: 100%;
+}
+
+.name_car {
+	display        : flex;
+	width          : 170px;
+	/* height         : 31px; */
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #EF7820;
+	font-family    : Roboto;
+	font-size      : 13px;
+	font-style     : normal;
+	font-weight    : 700;
+  margin-bottom: 5px;
+	/* line-height    : 30px; */
+	/* 230.769% */
+}
+
+.cost {
+	display        : flex;
+	width          : 170px;
+	height         : 19px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #000;
+	font-family    : Roboto;
+	font-size      : 13px;
+	font-style     : normal;
+	font-weight    : 800;
+	line-height    : 20px;
+	/* 153.846% */
+}
+
+
+.location,
+.last-visit {
+	display        : flex;
+	width          : 170px;
+	height         : 16px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #969696;
+	font-family    : Roboto;
+	font-size      : 11px;
+	font-style     : normal;
+	font-weight    : 400;
+	line-height    : 20px;
+	/* 181.818% */
+}
+
+.brand-auto {
+	color       : #000;
+	font-family : Roboto;
+	font-size   : 18px;
+	font-style  : normal;
+	font-weight : 400;
+	line-height : 40px;
+	margin-right: 15px;
+}
+
+.brand-auto__link {
+	color      : #969696;
+	font-family: Roboto;
+	font-size  : 18px;
+	font-style : normal;
+	font-weight: 700;
+	line-height: 40px;
+}
+
+.car-offer-brand {
+	display        : flex;
+	width          : 298px;
+	height         : 47px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #87C159;
+	font-family    : Roboto;
+	font-size      : 16px;
+	font-style     : normal;
+	font-weight    : 700;
+	line-height    : 30px;
+}
+
+.price {
+	display        : flex;
+	width          : 298px;
+	height         : 19px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #000;
+	font-family    : Roboto;
+	font-size      : 16px;
+	font-style     : normal;
+	font-weight    : 800;
+	line-height    : 20px;
+	/* 125% */
+}
+
+.desribe-car {
+	display        : flex;
+	width          : 276px;
+	height         : 48px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #000;
+	font-family    : Roboto;
+	font-size      : 14px;
+	font-style     : normal;
+	font-weight    : 400;
+	line-height    : 20px;
+	margin-top     : 5px;
+	margin-bottom  : 11px;
+}
+
+.car-offer__city {
+	display        : flex;
+	width          : 276px;
+	height         : 24px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #969696;
+	font-family    : Roboto;
+	font-size      : 14px;
+	font-style     : normal;
+	font-weight    : 400;
+	line-height    : 20px;
+	/* 142.857% */
+}
+
+.catalog-last-visit {
+	display        : flex;
+	width          : 276px;
+	height         : 24px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+}
+
+.block-car-contol-mobile {
+	display: none;
+}
+
+.all-ad-company-mobile {
+	display: none;
+}
+
+.block-message {
+	display   : flex;
+	margin-top: 5px;
+}
+
+.send-message {
+	display         : flex;
+	width           : 138px;
+	height          : 40px;
+	flex-direction  : column;
+	justify-content : center;
+	flex-shrink     : 0;
+	color           : #000;
+	text-align      : center;
+	font-family     : Roboto;
+	font-size       : 13px;
+	font-style      : normal;
+	font-weight     : 400;
+	line-height     : normal;
+	background-color: #FECD00;
+	margin-right    : 14px;
+	border-radius   : 3px;
+}
+
+.call {
+	display         : flex;
+	width           : 142px;
+	height          : 40px;
+	flex-direction  : column;
+	justify-content : center;
+	flex-shrink     : 0;
+	color           : #FFF;
+	text-align      : center;
+	font-family     : Roboto;
+	font-size       : 13px;
+	font-style      : normal;
+	font-weight     : 400;
+	line-height     : normal;
+	background-color: #EF7820;
+	border-radius   : 3px;
+}
+
+.similar-ads-block {
+	display       : flex;
+	flex-direction: column;
+}
+
+.similar-ads {
+	display        : flex;
+	width          : 583px;
+	height         : 97px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #000;
+	font-family    : Roboto;
+	font-size      : 32px;
+	font-style     : normal;
+	font-weight    : 700;
+	line-height    : normal;
+}
+
+.callphone-offer {
+	color          : #000;
+	text-align     : center;
+	font-family    : Roboto;
+	font-size      : 16px;
+	font-style     : normal;
+	font-weight    : 400;
+	line-height    : normal;
+	display        : flex;
+	width          : 908px;
+	height         : 56px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	margin-top     : 47px;
+	background     : rgb(217, 217, 217, 0.29);
+	margin-bottom  : 92px;
+	cursor         : pointer;
+}
+
+.block-contacts {
+	display       : flex;
+	flex-direction: column;
+}
+
+
+.block-contacts-mobile {
+	display: none;
+}
+
+.contact-seller {
+	display        : flex;
+	width          : 270px;
+	height         : 56px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #FFF;
+	text-align     : center;
+	font-family    : Roboto;
+	font-size      : 16px;
+	font-style     : normal;
+	font-weight    : 400;
+	line-height    : normal;
+	border-radius  : 6px;
+	margin-top     : 11px;
+  cursor: pointer;
+}
+
+.block-car-contol {
+	display       : flex;
+	flex-direction: column;
+	margin-left   : 65px;
+	width         : 270px;
+}
+
+.write {
+	background: #EF7820;
+	margin-top: 0;
+}
+
+.call-to-seller {
+	background: #FECD00;
+	margin-top: 11px;
+}
+
+.offer-call {
+	background: #D9D9D9;
+}
+
+.favorit-add {
+	background: #424242;
+}
+.favorit-add.added {
+  background: red;
+}
+.block-firm-name {
+	display        : flex;
+	margin-top     : 24px;
+	justify-content: center;
+	align-items    : center;
+}
+
+.firm-name {
+	display        : flex;
+	width          : 209px;
+	height         : 34px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #000;
+	font-family    : Roboto;
+	font-size      : 18px;
+	font-style     : normal;
+	font-weight    : 400;
+	line-height    : 30px;
+	/* 166.667% */
+}
+
+.block-location__headline {
+	display        : flex;
+	width          : 270px;
+	height         : 63px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #000;
+	font-family    : Roboto;
+	font-size      : 20px;
+	font-style     : normal;
+	font-weight    : 700;
+	line-height    : normal;
+}
+
+.block-location__metro-item {
+	color      : #000;
+	font-family: Roboto;
+	font-size  : 17px;
+	font-style : normal;
+	font-weight: 400;
+	line-height: 25px;
+	/* 147.059% */
+}
+
+.block-location__metro-list {
+	padding-left: 28px;
+}
+
+.you-looked-block {
+	display       : flex;
+	flex-direction: column;
+	margin-top    : 20px;
+}
+
+.you-looked-block__headline {
+	display        : flex;
+/* 	width          : 583px; */
+	height         : 65px;
+	flex-direction : column;
+	justify-content: center;
+	flex-shrink    : 0;
+	color          : #000;
+	font-family    : Roboto;
+	font-size      : 20px;
+	font-style     : normal;
+	font-weight    : 700;
+	line-height    : normal;
+}
+
+.you-looked-block__cars {
+	display       : flex;
+	flex-direction: column;
+}
+
+.you-looked-car {
+	display       : flex;
+	flex-direction: column;
+	width         : 170px;
+	flex-shrink   : 0;
+	margin-right  : 20px;
+}
+
+.mobile-block-advertisements-2 {
+	display          : flex;
+	width            : 100%;
+	height           : 709px;
+	flex-shrink      : 0;
+	background       : url(../images/card-page/sber-ad.png);
+	background-repeat: no-repeat;
+	margin-top       : 40px;
+}
+
+.footer__list {
+	display        : flex;
+	flex-direction : column;
+	justify-content: space-around;
+	max-width      : 455px;
+	height         : 100%;
+}
+
+.footer__img {
+	width      : 243px;
+	flex-shrink: 0;
+}
+
+.footer__img:last-child {
+	width      : 243px;
+	flex-shrink: 0;
+	margin-top : 18px;
+}
+
+.footer__inner {
+	display        : flex;
+	justify-content: space-between;
+}
+
+.footer__p {
+	color      : #FFF;
+	font-family: Roboto;
+	font-size  : 17px;
+	font-style : normal;
+	font-weight: 400;
+	line-height: 29px;
+}
+
+.footer__search {
+	position  : relative;
+	width     : 455px;
+	margin-top: 29px;
+}
+
+.footer__policy {
+	color      : #FFF;
+	font-family: Roboto;
+	font-size  : 17px;
+	font-style : normal;
+	font-weight: 400;
+	line-height: 29px;
+	margin-top : 15px;
+}
+
+.mobile-card-ad {
+	display: none;
+}
+
+.block-firm-name-mobile {
+	display: none;
+}
+
+.block-location-mobile {
+	display: none;
+}
+
+.you-looked-block-mobile {
+	display       : none;
+	flex-direction: column;
+}
+
+
+.block-advertisements-2 {
+	display          : flex;
+	width            : 100%;
+	height           : 709px;
+	flex-shrink      : 0;
+	background       : url(../images/card-page/sber-ad.png);
+	background-repeat: no-repeat;
+	margin-top       : 40px;
+	display: none;
+}
+
+.you-looked-block-mobile {
+	display: none;
+}
+
+.mobile-block-advertisements-2 {
+	display          : none;
+	width            : 100%;
+	height           : 709px;
+	flex-shrink      : 0;
+	background       : url(../images/card-page/sber-ad.png);
+	background-repeat: no-repeat;
+	margin-top       : 40px;
+}
+
+
+
+
+@media screen and (max-width: 1200px) {
+
+	.logo-block-wrap {
+		display        : flex;
+		align-items    : center;
+		justify-content: space-between;
+		width          : 100%;
+	}
+
+	.header__list {
+		margin-top: 20px;
+	}
+
+	.content-bread-wrap {
+		margin-top: 15px;
+	}
+
+	.auto-belarus {
+		font-size : 38px;
+		text-align: left;
+	}
+
+	.auto-belarus__wrap {
+		display        : flex;
+		justify-content: space-between;
+		width          : 100%;
+		padding-left   : 80px;
+		padding-right  : 80px;
+		flex-wrap      : wrap;
+		height         : auto;
+	}
+
+	.auto-belarus__total {
+		text-align: left;
+	}
+
+	.main-block-auto {
+		display        : flex;
+		width          : 100%;
+		padding-left   : 80px;
+		padding-right  : 80px;
+		flex-wrap      : wrap;
+		align-items    : center;
+		justify-content: center;
+	}
+
+	.block-car-contol {
+		display       : flex;
+		margin-left   : 0;
+		width         : 100%;
+		flex-direction: row;
+		flex-wrap     : wrap;
+	}
+
+	.block-auto-car-information {
+		display       : flex;
+		flex-direction: column;
+		flex-wrap     : wrap;
+	}
+
+	.block-firm-name {
+		display        : flex;
+		margin-top     : 24px;
+		justify-content: space-around;
+		align-items    : center;
+		flex-direction : column;
+		margin-left    : 50px;
+	}
+
+	.you-looked-block__cars {
+		display       : flex;
+		flex-wrap     : wrap;
+		flex-direction: row;
+	}
+
+	footer {
+		background: black;
+		height    : auto;
+	}
+
+	.footer__inner {
+		display        : flex;
+		height         : auto;
+		flex-direction : row;
+		flex-wrap      : wrap;
+		justify-content: center;
+	}
+}
+@media screen and (max-width: 1024px) {
+.content {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+}
+@media screen and (max-width: 930px) {
+	.img {
+		width : 100%;
+		height: 100%;
+	}
+
+	.logo-block-wrap {
+		display        : flex;
+		align-items    : center;
+		justify-content: space-between;
+		width          : 100%;
+	}
+
+	.block_inner {
+		max-width    : 2560px;
+		margin       : 0px auto;
+		padding-left : 20px;
+		padding-right: 20px;
+	}
+
+	.content-bread-wrap {
+		margin-top   : 15px;
+/* 		padding-left : 25px;
+		padding-right: 25px; */
+	}
+
+	.auto-belarus__wrap {
+		display        : flex;
+		justify-content: space-between;
+		width          : 100%;
+		padding-left   : 20px;
+		padding-right  : 20px;
+		flex-wrap      : wrap;
+		height         : auto;
+	}
+
+	.car-gallery {
+		display        : flex;
+		width          : 100%;
+		height         : auto;
+		margin-top     : 9px;
+		flex-wrap      : wrap;
+		justify-content: space-between;
+	}
+
+	.main-block-auto {
+		display        : flex;
+		width          : 100%;
+		padding-left   : 20px;
+		padding-right  : 20px;
+		flex-wrap      : wrap;
+		align-items    : center;
+		justify-content: center;
+	}
+
+	.block-car {
+		width          : 100%;
+		padding-left   : 0px;
+		padding-right  : 0px;
+		flex-wrap      : wrap;
+		display        : flex;
+		justify-content: center;
+		align-items    : center;
+	}
+
+	.car-img {
+		width          : 100%;
+		height         : auto;
+		justify-content: center;
+		align-items    : center;
+		display        : flex;
+	}
+
+	.car-img__main-pic {
+		width: 100%;
+	}
+
+	.car-block {
+		display      : flex;
+		position     : relative;
+		overflow     : hidden;
+		width        : 108px;
+		height       : 77px;
+		margin-right : 5px;
+		margin-bottom: 5px;
+	}
+
+
+	.block-car__technical-describes {
+		display       : flex;
+		flex-direction: column;
+		width         : 100%;
+		flex-shrink   : 0;
+		padding-left  : 100px;
+		padding-right : 100px;
+	}
+
+	.technical-describes-block-list {
+		display  : flex;
+		flex-wrap: wrap;
+		width    : 100%;
+	}
+
+	.block-car__technical-describes_headline {
+		display        : flex;
+		width          : 90%;
+		height         : auto;
+		justify-content: center;
+		flex-shrink    : 0;
+		color          : #000;
+		font-family    : Roboto;
+		font-size      : 32px;
+		font-style     : normal;
+		font-weight    : 700;
+		line-height    : normal;
+		margin-top     : 30px;
+		margin-bottom  : 40px;
+	}
+
+	.block-car__technical-describes {
+		display       : flex;
+		flex-direction: column;
+		width         : 100%;
+		flex-shrink   : 0;
+		padding-left  : 0px;
+		padding-right : 0px;
+	}
+
+	.credit-conditions-block {
+		width : 100%;
+		height: auto;
+	}
+
+	.block-auto-car-information {
+		display       : flex;
+		flex-direction: column;
+		flex-wrap     : wrap;
+		width         : 100%;
+	}
+
+	.similar-ads-block {
+		display       : flex;
+		flex-direction: column;
+		width         : 100%;
+	}
+
+	.cars-offers-block {
+		display        : flex;
+		flex-wrap      : wrap;
+		margin-top     : 31px;
+		justify-content: center;
+	}
+
+	.car-offer:nth-child(2) {
+		margin-right: 0;
+	}
+
+	.car-offer:nth-child(3) {
+		margin-top  : 0px;
+		margin-right: 0;
+	}
+
+	.callphone-offer {
+		width: 90%;
+	}
+	.car-picture__block-img {
+		width: 100%;
+		height: auto;
+	}
+	.you-looked-car__block-describe>*, .you-looked-car__block-describe{
+		width: 100%;
+    height: auto;
+    padding-left: 0;
+	}
+}
+
+@media screen and (max-width: 425px) {
+
+	.logo-block-wrap {
+		display        : flex;
+		justify-content: space-between;
+		align-items    : center;
+		width          : 100%;
+	}
+
+	.category {
+		background : black;
+		width      : 178px;
+		height     : 50px;
+		flex-shrink: 0;
+	}
+
+	.category__p {
+		display        : flex;
+		width          : 111px;
+		height         : 35px;
+		flex-direction : column;
+		justify-content: center;
+		flex-shrink    : 0;
+		margin-left    : 10px;
+	}
+
+	.ad {
+		display: flex;
+		height : auto;
+	}
+
+	.ad__img {
+		width  : 100%;
+		display: none;
+	}
+
+	.ad__img-mobile {
+		display: flex;
+		width  : 100%;
+	}
+
+	.logo {
+		cursor: pointer;
+		width : auto;
+	}
+
+	.logo__p {
+		letter-spacing: 0em;
+		text-align    : left;
+		color         : #FECD00;
+		font-family   : Roboto;
+		font-size     : 25px;
+		font-style    : normal;
+		font-weight   : 700;
+		line-height   : normal;
+		text-transform: uppercase;
+	}
+
+	.logo__span {
+
+		font-family   : Roboto;
+		font-size     : 25px;
+		font-style    : normal;
+		font-weight   : 700;
+		line-height   : normal;
+		text-transform: uppercase;
+	}
+
+	.header__bottom {
+		margin-top   : 0px;
+		padding-left : 10px;
+		padding-right: 10px;
+	}
+
+	.block_inner {
+		max-width    : 2560px;
+		margin       : 0px auto;
+		padding-left : 0px;
+		padding-right: 0px;
+	}
+
+	.content-bread-wrap {
+		flex-grow     : 1;
+		display       : flex;
+		flex-direction: column;
+		width         : 100%;
+		padding-left  : 0;
+		height        : auto;
+		padding-right : 0;
+	}
+
+	.bread-crumbs-list {
+		display   : none;
+		list-style: none;
+	}
+
+	.auto-belarus__wrap {
+		padding-left : 0px;
+		padding-right: 0px;
+		flex-wrap    : wrap;
+		height       : auto;
+		margin-bottom: 20px;
+	}
+
+	.auto-belarus {
+		font-size    : 32px;
+		text-align   : left;
+		height       : auto;
+		line-height  : 45px;
+		margin-bottom: 40px;
+		margin-top   : 40px;
+	}
+
+	.auto-belarus__total {
+		text-align: left;
+		margin-top: 0px;
+		font-size : 32px;
+		width     : auto;
+	}
+
+	.main-block-auto {
+		padding-left : 0px;
+		padding-right: 0px;
+	}
+
+	.block-location-mobile {
+		display       : flex;
+		flex-direction: column;
+	}
+
+	.car-block {
+		display      : flex;
+		position     : relative;
+		overflow     : hidden;
+		width        : 38px;
+		height       : 40px;
+		margin-bottom: 10px;
+	}
+
+	.describe-text-mobile {
+		width        : auto;
+		text-align   : left;
+		margin-right : auto;
+		height       : auto;
+		margin-top   : 50px;
+		margin-bottom: 20px;
+		display      : flex;
+	}
+
+	.describe-text {
+		display        : flex;
+		height         : 97px;
+		flex-direction : column;
+		justify-content: center;
+		flex-shrink    : 0;
+		color          : #000;
+		font-family    : Roboto;
+		font-size      : 32px;
+		font-style     : normal;
+		font-weight    : 700;
+		line-height    : normal;
+		width          : 100%;
+		margin-top     : 37px;
+	}
+
+	.all-ad-company-mobile {
+		display        : flex;
+		width          : 100%;
+		height         : 56px;
+		flex-direction : column;
+		justify-content: center;
+		flex-shrink    : 0;
+		color          : #FFF;
+		text-align     : center;
+		font-family    : Roboto;
+		font-size      : 16px;
+		font-style     : normal;
+		font-weight    : 400;
+		line-height    : normal;
+		margin-top     : 45px;
+		border-radius  : 6px;
+		background     : #EF7820;
+	}
+
+	.block-car {
+		width          : 100%;
+		padding-left   : 0px;
+		padding-right  : 0px;
+		flex-wrap      : wrap;
+		display        : flex;
+		align-items    : center;
+		justify-content: inherit;
+	}
+
+	.block-firm-name-mobile {
+		display    : flex;
+		align-items: center;
+		margin-top : 30px;
+	}
+
+	.block-auto-car-information {
+		display       : flex;
+		flex-direction: column;
+		flex-wrap     : wrap;
+		width         : 100%;
+		order         : 0;
+	}
+
+	.block-car-contol {
+		display        : none;
+		margin-left    : 0;
+		width          : 100%;
+		flex-direction : row;
+		flex-wrap      : wrap;
+		justify-content: center;
+	}
+
+
+	.technical-describes-block-list {
+		display        : flex;
+		flex-wrap      : wrap;
+		justify-content: center;
+		width          : 95%;
+	}
+
+	.All-options {
+		width     : 100%;
+		height    : 22px;
+		text-align: left;
+		margin-top: 20px;
+	}
+
+	.block-car__technical-describes_headline {
+		width     : 90%;
+		height    : auto;
+		margin-top: 30px;
+	}
+
+	.block-firm-name {
+		justify-content: space-around;
+		align-items    : center;
+		flex-direction : column;
+		margin-left    : 50px;
+		order          : -1;
+	}
+
+	.block-location {
+		order: -1;
+	}
+
+
+	.you-looked-block {
+		display       : flex;
+		flex-direction: column;
+		order         : -1;
+	}
+
+	.you-looked-block__cars {
+		display        : none;
+		flex-wrap      : wrap;
+		flex-direction : row;
+		justify-content: center;
+		width          : 100%;
+		align-items    : center;
+	}
+
+	.car-img {
+		width          : 100%;
+		height         : auto;
+		justify-content: center;
+		align-items    : center;
+		display        : flex;
+	}
+
+	.car-img__main-pic {
+		width        : 100%;
+		border-radius: 5px;
+	}
+
+	.car-gallery {
+		display   : flex;
+		width     : 100%;
+		height    : auto;
+		margin-top: 9px;
+		flex-wrap : wrap;
+	}
+
+	.technical-describes__list {
+		padding-left: 35px;
+		width       : 100%;
+		height      : auto;
+		flex-shrink : 0;
+		margin-left : 0;
+	}
+
+	.technical-describes__item {
+		color      : #000;
+		font-family: Roboto;
+		font-size  : 17px;
+		font-style : normal;
+		font-weight: 400;
+		line-height: 35px;
+		width      : auto;
+	}
+
+	.cars-offers-block {
+		display        : flex;
+		margin-top     : 0;
+		justify-content: center;
+		align-items    : center;
+		flex-direction : column;
+		width          : 100%;
+	}
+
+	.car-offer {
+		width          : 100%;
+		flex-shrink    : 0;
+		margin-right   : 0;
+		position       : relative;
+		justify-content: center;
+		align-items    : center;
+		display        : flex;
+		flex-direction : column;
+		margin-bottom  : 47px;
+	}
+
+	.car-block:nth-child(3),
+	.car-block:nth-child(6),
+	.car-block:nth-child(9),
+	.car-block:nth-child(12),
+	.car-block:nth-child(15) {
+		margin-right: 5px;
+	}
+
+	.car-block:nth-child(8),
+	.car-block:nth-child(16) {
+		margin-right: 0;
+	}
+
+	.similar-ads {
+		width     : auto;
+		height    : 97px;
+		text-align: center;
+		margin-top: 50px;
+	}
+
+	.similar-ads-block {
+		display       : flex;
+		flex-direction: column;
+		width         : 100%;
+		margin-bottom : 30px;
+	}
+
+	.block-contacts {
+		display       : none;
+		flex-direction: column;
+		order         : -1;
+	}
+
+	.block-contacts-mobile {
+		display       : flex;
+		flex-direction: column;
+		order         : 0;
+		margin-top    : 20px;
+		width         : 100%;
+	}
+
+	.contact-seller {
+		height: 56px;
+		width : 100%;
+		cursor: pointer;
+	}
+
+	.callphone-offer {
+		width  : 90%;
+		order  : -1;
+		display: none;
+	}
+
+	.mobile-card-ad {
+		width            : 100%;
+		flex-shrink      : 0;
+		background       : url(../images/catalog_page/mobile/mobile-block-advertisement.png);
+		background-repeat: no-repeat;
+		margin-top       : 40px;
+		order            : 0;
+		display          : flex;
+		height           : 120px;
+		flex-shrink      : 0;
+		background-size  : cover;
+	}
+
+	.mobile-block-advertisements-2 {
+		width            : 100%;
+		height           : 709px;
+		flex-shrink      : 0;
+		background       : url(../images/card-page/sber-ad.png);
+		background-repeat: no-repeat;
+		margin-top       : 40px;
+		order            : 0;
+		display          : none;
+	}
+
+	.footer__list {
+		display        : flex;
+		flex-direction : column;
+		justify-content: space-around;
+		max-width      : 325px;
+		height         : 100%;
+		padding-top    : 0;
+		margin-top     : 34px;
+	}
+
+	.footer__ul {
+		width     : 100%;
+		margin-top: 34px;
+	}
+
+	.footer__li {
+		margin-left: 85px;
+	}
+
+	.footer__p {
+		margin-top   : 0px;
+		width        : 311px;
+		height       : 138px;
+		flex-shrink  : 0;
+		color        : #FFF;
+		font-family  : Roboto;
+		font-size    : 17px;
+		font-style   : normal;
+		font-weight  : 400;
+		line-height  : 25px;
+		margin-bottom: 10px;
+	}
+
+	.footer__search {
+		position   : relative;
+		margin-top : 29px;
+		width      : 273px;
+		height     : 56px;
+		flex-shrink: 0;
+	}
+
+	.footer__policy {
+		font-size : 17px;
+		text-align: center;
+	}
+
+	.footer__inner {
+		display        : flex;
+		height         : auto;
+		flex-direction : row;
+		flex-wrap      : wrap;
+		justify-content: center;
+		padding        : 0;
+		padding-bottom : 81px;
+	}
+
+	.you-looked-block-mobile {
+		display: none;
+	}
+}

@@ -221,10 +221,10 @@ RUN cd /tmp && \
       --njs" && \
     make -j $NCPU -C pkg/contrib .njs && \
     export PKG_CONFIG_PATH=$(pwd)/pkg/contrib/njs/build && \
-#    ./configure $CONFIGURE_ARGS --modulesdir=/usr/lib/unit/debug-modules --debug && \
-#    make -j $NCPU unitd && \
-#    install -pm755 build/sbin/unitd /usr/sbin/unitd-debug && \
-#    make clean && \
+    ./configure $CONFIGURE_ARGS --modulesdir=/usr/lib/unit/debug-modules --debug && \
+    make -j $NCPU unitd && \
+    install -pm755 build/sbin/unitd /usr/sbin/unitd-debug && \
+    make clean && \
     ./configure $CONFIGURE_ARGS --modulesdir=/usr/lib/unit/modules && \
     make -j $NCPU unitd && \
     install -pm755 build/sbin/unitd /usr/sbin/unitd && \
@@ -266,6 +266,7 @@ RUN groupadd --gid 9999 unit && \
     mkdir -p /var/www/html/wp-content/uploads && \
     mkdir -p /etc/crontabs && \
     chown -R www-data:www-data /var/www/html/wp-content && \
+    mv /var/www/html/wp-config-docker.php /var/www/html/wp-config.php && \
     echo "* * * * * /usr/local/bin/wp cron event run --due-now" >> /etc/crontabs/www-data
 
 STOPSIGNAL SIGTERM
@@ -289,7 +290,7 @@ RUN . /opt/venv/bin/activate && \
     pip install -U pip setuptools wheel && \
     pip install -Ur /tmp/requirements.txt
 
-COPY ./aurauto /app/aurauto
+COPY ./backend /app/aurauto
 ENV PYTHONPATH=/app/aurauto
 
 ARG CI_COMMIT_SHORT_SHA
