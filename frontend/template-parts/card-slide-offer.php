@@ -5,13 +5,17 @@ $cur_user_id = get_current_user_id();
 $liked_cars = get_user_meta( $cur_user_id, 'like_auto', false );
 $idAuto =  $value->ad_id;
 $name = $value->brand . ' ' . $value->model . '-' . $value->production_date;
-$slug = transliterate($name) . '-' . $value->ad_id;
+$slug = get_permalink(8) . transliterate($name) . '-' . $value->ad_id;
+$logo = get_template_directory_uri() . '/assets/images/logo.svg';
+$image = sizeof($value->images)>0 ? $value->images[0] : null;
 ?>
 <div class="car-offer">
   <div class="car-picture__block-img">
-    <a href="<?php echo get_permalink(8) . $slug; ?>">
-      <img class="car-picture" src="<?php echo  $value->images[0]  ?>" alt="car" onerror="this.src = '<?php echo get_template_directory_uri()?>/assets/images/logo.svg'">
-    </a>
+    <?php
+      if ($image != null) {
+        echo '<a href="' . $slug . '"><img class="car-picture" src="'. $image .'" alt="car" onerror="this.src = '. $logo .'"></a>';
+      }
+    ?>
     <div class="block-contacts-call">
       <a href="#" class="telephone-icon">
         <img src="<?php echo  get_template_directory_uri() ?>/assets/images/catalog_page/mobile/telephone-icon.png" alt="phone">

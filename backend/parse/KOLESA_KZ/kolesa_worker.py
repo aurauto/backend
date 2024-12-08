@@ -1,12 +1,14 @@
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
+
 import requests
-from .kolesa_ads_tools import parse_one_html
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 from loguru import logger
-from .connect_vars import PROXY, TIMEOUT, REFRESH_LINK, PAGE_LIMIT
-from concurrent.futures import ThreadPoolExecutor
-import threading
+
+from .kolesa_ads_tools import parse_one_html
+from ..connect_vars import PROXY, TIMEOUT, REFRESH_LINK, PAGE_LIMIT
 
 refresh_mutex = threading.Lock()
 
@@ -14,7 +16,7 @@ refresh_mutex = threading.Lock()
 def proxy_request(session: requests.Session):
     request_success = False
     r = None
-    while not request_success:
+    while not request_success and REFRESH_LINK is not None:
         try:
             r = session.get(REFRESH_LINK, timeout=8)
             return r.status_code

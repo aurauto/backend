@@ -202,9 +202,15 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp && \
 RUN cd /tmp && \
     git clone https://github.com/nginx/unit.git  && \
     cd unit && \
+    git clone https://github.com/nginx/njs.git && \
+    cd njs && \
+    git checkout -b 0.8.7 0.8.7 && \
+    ./configure --no-zlib --no-libxml2 && \
+    make && \
+    cd ../ && \
     NCPU="$(getconf _NPROCESSORS_ONLN)" && \
     DEB_HOST_MULTIARCH="$(dpkg-architecture -q DEB_HOST_MULTIARCH)" && \
-    CONFIGURE_ARGS_MODULES="--prefix=/usr \
+    CONFIGURE_ARGS="--prefix=/usr \
       --modules=/lib \
       --statedir=/var/lib/unit \
       --control=unix:/var/run/control.unit.sock \
@@ -216,22 +222,31 @@ RUN cd /tmp && \
       --user=unit \
       --group=unit \
       --openssl \
+      --njs \
       --libdir=/usr/lib/$DEB_HOST_MULTIARCH" && \
-    CONFIGURE_ARGS="$CONFIGURE_ARGS_MODULES \
-      --njs" && \
     make -j $NCPU -C pkg/contrib .njs && \
     export PKG_CONFIG_PATH=$(pwd)/pkg/contrib/njs/build && \
-    ./configure $CONFIGURE_ARGS --modulesdir=/usr/lib/unit/debug-modules --debug && \
+    ./configure $CONFIGURE_ARGS \
+      --cc-opt="-I./njs/src/ -I./njs/build/" \
+      --ld-opt="-L./njs/build/" \
+      --modulesdir=/usr/lib/unit/debug-modules \
+      --debug && \
     make -j $NCPU unitd && \
     install -pm755 build/sbin/unitd /usr/sbin/unitd-debug && \
     make clean && \
-    ./configure $CONFIGURE_ARGS --modulesdir=/usr/lib/unit/modules && \
+    ./configure $CONFIGURE_ARGS \
+      --cc-opt="-I./njs/src/ -I./njs/build/" \
+      --ld-opt="-L./njs/build/" \
+      --modulesdir=/usr/lib/unit/modules && \
     make -j $NCPU unitd && \
     install -pm755 build/sbin/unitd /usr/sbin/unitd && \
     make clean && \
     /bin/true && \
 #    ./configure $CONFIGURE_ARGS_MODULES --modulesdir=/usr/lib/unit/debug-modules --debug && \
-    ./configure $CONFIGURE_ARGS_MODULES --modulesdir=/usr/lib/unit/modules && \
+    ./configure $CONFIGURE_ARGS \
+      --cc-opt="-I./njs/src/ -I./njs/build/" \
+      --ld-opt="-L./njs/build/" \
+      --modulesdir=/usr/lib/unit/modules && \
     ./configure php && \
     make -j $NCPU php && \
     make -j $NCPU php-install && \

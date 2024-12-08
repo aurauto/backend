@@ -18,9 +18,26 @@
     "routes": [
         {
             "match": {
+                "uri": "~\\.ico"
+            },
+            "action": {
+                "share": "/static/favicon.ico",
+                "chroot": "/static"
+            }
+        },
+        {
+            "match": {
+                "uri": "/static/*"
+            },
+            "action": {
+                "share": "$uri",
+                "chroot": "/static"
+            }
+        },
+        {
+            "match": {
                 "uri": [
                     "/api/*",
-                    "/static/*",
                     "/health"
                 ]
             },

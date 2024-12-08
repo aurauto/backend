@@ -22,7 +22,9 @@ services:
       - local.env
     volumes:
       - ./backend:/app/aurauto:ro
-      - ./frontend:/var/www/html/wp-content/themes/aurauto
+      - ./frontend:/var/www/html/wp-content/themes/aurauto:ro
+      - ./static:/static:ro
+      - ./unit.json:/docker-entrypoint.d/unit.json:ro
     networks:
       aurauto-network:
         aliases:

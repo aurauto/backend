@@ -58,42 +58,39 @@ def kolesa_kz():
 @app.on_after_configure.connect
 def setup_periodic_tasks(sender: CeleryClass, **kwargs):
     clear_old_ads.delay()
-    kufar.delay()
-    lalafo.delay()
     list_am.delay()
+    # kufar.delay()
+    # lalafo.delay()
     # kolesa_kz.delay()
-    # sender.add_periodic_task(
-    #     crontab(minute=1, hour='*/12'),
-    #     kolesa_kz.s(),
-    #     start_time=datetime.datetime.now(),
-    #     name='KOLESA.KZ',
-    # )
-
-    # ______________________________________________________________________________________________________________
-    sender.add_periodic_task(
-        crontab(minute=1, hour='*/24'),
-        clear_old_ads.s(),
-        start_time=timezone.now(),
-        name='Clear old ads',
-    )
 
     sender.add_periodic_task(
         crontab(minute=1, hour='*/12'),
         list_am.s(),
         start_time=timezone.datetime.now(),
         name='LIST.AM',
-
     )
-    sender.add_periodic_task(
-        crontab(minute=20, hour='*/12'),
-        lalafo.s(),
-        start_time=timezone.datetime.now(),
-        name='LALAFO',
-
-    )
-    sender.add_periodic_task(
-        crontab(minute=40, hour='*/12'),
-        kufar.s(),
-        start_time=timezone.datetime.now(),
-        name='KUFAR',
-    )
+    # sender.add_periodic_task(
+    #     crontab(minute=1, hour='*/12'),
+    #     kolesa_kz.s(),
+    #     start_time=timezone.now(),
+    #     name='KOLESA.KZ',
+    # )
+    # sender.add_periodic_task(
+    #     crontab(minute=1, hour='*/24'),
+    #     clear_old_ads.s(),
+    #     start_time=timezone.now(),
+    #     name='Clear old ads',
+    # )
+    # sender.add_periodic_task(
+    #     crontab(minute=20, hour='*/12'),
+    #     lalafo.s(),
+    #     start_time=timezone.datetime.now(),
+    #     name='LALAFO',
+    #
+    # )
+    # sender.add_periodic_task(
+    #     crontab(minute=40, hour='*/12'),
+    #     kufar.s(),
+    #     start_time=timezone.datetime.now(),
+    #     name='KUFAR',
+    # )

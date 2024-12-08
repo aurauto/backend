@@ -15,7 +15,6 @@ def list_am_main_cycle():
             logger.info(
                 f'parsed: {mark_name}  time: {round(time.time() - start, 2)}  len:{len(results) if results else 0}')
             for i in results:
-
                 if i:
                     save_data(i)
     finally:

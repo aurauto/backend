@@ -1,6 +1,6 @@
 import re
 from typing import Any
-
+from loguru import logger
 from bs4 import BeautifulSoup
 from bs4.element import Tag, NavigableString
 
@@ -98,9 +98,8 @@ def parse_one_ad(html: str | bytes, link: str) -> dict | None:
         blocks = soup.findAll('div', {'class': 'attr g'})[:3]
         attrs, info, exterior = blocks
     except ValueError as e:
-        pass
-        # logger.warning(f'{link} not enough information ')
-        # logger.warning(e)
+        logger.warning(f'{link} not enough information ')
+        logger.warning(e)
         return None
     params = _switch_attrs(attrs)
     params['ad_id'] = re.sub(r'[https://www.list.am/ru/item/]', '', link)

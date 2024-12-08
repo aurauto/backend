@@ -1,7 +1,10 @@
+import asyncio
+
 import aiohttp
-from loguru import logger
-from .kufar_ads_tools import parse_ad, find_token, create_params
 from bs4 import BeautifulSoup
+from loguru import logger
+
+from .kufar_ads_tools import parse_ad, find_token, create_params
 
 
 async def parse_pages(mark, session: aiohttp.ClientSession, model=None, token=None):
@@ -34,9 +37,9 @@ async def parse_description(url, session: aiohttp.ClientSession):
                     return await parse_description(url, session)
                 return None
             data = await resp.text()
-            # soup = BeautifulSoup(data, 'lxml')
-            # description = soup.select("div[itemprop='description']")
-            # return description[0].text
+            soup = BeautifulSoup(data, 'lxml')
+            description = soup.select("div[itemprop='description']")
+            return description[0].text
     except Exception as e:
         logger.error(f'{type(e).__name__} {e}')
         return await parse_description(url, session)
@@ -47,16 +50,16 @@ async def parse_mark(mark_id, mark_name):
         try:
             ads_data = await parse_pages(mark_id, session)
             ads_data = [parse_ad(i, mark_name) for i in ads_data]
-            # if ads_data:
-            #     urls = [i['link'] for i in ads_data]
-            # logger.debug(f'ads count: {len(urls)}')
+            if ads_data:
+                urls = [i['link'] for i in ads_data]
+            logger.debug(f'ads count: {len(urls)}')
             tasks = []
-            # for url in urls:
-            #     tasks.append(asyncio.ensure_future(
-            #         parse_description(url, session)))
-            # description_data = await asyncio.gather(*tasks)
-            # for index, description in enumerate(description_data):
-            #     ads_data[index]['description'] = description
+            for url in urls:
+                tasks.append(asyncio.ensure_future(
+                    parse_description(url, session)))
+            description_data = await asyncio.gather(*tasks)
+            for index, description in enumerate(description_data):
+                ads_data[index]['description'] = description
             return ads_data
         finally:
             await session.close()

@@ -14,7 +14,7 @@ $cars_gearbox_object = fetch_api_data("http://localhost/api/cars_gearbox/", "cac
 $cars_type_object = fetch_api_data("http://localhost/api/cars_type/", "cached_car_types");
 $cars_color_object = fetch_api_data("http://localhost/api/color/", "cached_car_colors");
 $country = '';
-  if ($_COOKIE[ 'selectedCountry']) {
+  if (isset($_COOKIE['selectedCountry']) && $_COOKIE[ 'selectedCountry']) {
     $country = $_COOKIE[ 'selectedCountry'];
   }
   $cars_key = "cached_cars_" . ($country ?: "default");
@@ -237,10 +237,13 @@ $country = '';
     </div>
     <div class="slider offers__slider" id="offers_one">
       <div class="slider__container">
-      <?php  
-              foreach ($objectDecode->results as $key => $value) {
+      <?php
+        if ($objectDecode != null) {
+            foreach ($objectDecode->results as $key => $value) {
                 get_template_part( 'template-parts/card', 'slide-offer', $value );
-              }?>
+            }
+        }
+      ?>
       </div>
     </div>
   </div>
@@ -285,8 +288,20 @@ $country = '';
     </div>
     <div class="slider offers__slider" id="offers_three">
       <div class="slider__container">
-      <?php 
-          $top10 = get_field('top_10', 2);
+      <?php
+          $top10 = [
+            ["makra" => "BMW", "model" => "3 series"],
+            ["makra" => "Audi", "model" => "A4"],
+            ["makra" => "Ford", "model" => "Focus"],
+            ["makra" => "Mazda", "model" => "6"],
+            ["makra" => "Renault", "model" => "Arkana"],
+            ["makra" => "Nissan", "model" => "Murano"],
+            ["makra" => "Mitsubishi", "model" => "Lancer"],
+            ["makra" => "Chevrolet", "model" => "Cruze"],
+            ["makra" => "Peugeot", "model" => "307"],
+            ["makra" => "Opel", "model" => "Astra"],
+            ["makra" => "BMW", "model" => "X5"]
+          ];
           $top10array = [];
           foreach ($top10 as $key => $value) {
             if ($country == 'Армения') {
@@ -302,19 +317,14 @@ $country = '';
               $object = file_get_contents(myUrlEncode('http://localhost/api/car_ad_filter/?brand='.$value['marka'].'&model='.$value['model'].'&production_date_min=2010&condition=С пробегом&price_min=2000&page_size=1'));
               $objectArray = json_decode($object); 
             }
-            // $object = file_get_contents(myUrlEncode('http://localhost/api/car_ad_filter/?brand='.$value['marka'].'&model='.$value['model'].'&production_date_min=2010&price_min=2000&page_size=1'));
-            //   $objectArray = json_decode($object); 
             $top10array[] = $objectArray->results;
           }
-          // var_dump($top10array);
           foreach ($top10array as $key => $value) {
-            if($value[0]) {
-            get_template_part( 'template-parts/card', 'slide-offer', $value[0] );
-              
+            if(sizeof($value) > 0 && $value[0]) {
+                get_template_part( 'template-parts/card', 'slide-offer', $value[0] );
             }
           }
       ?>
-
       </div>
     </div>
   </div>
@@ -332,9 +342,10 @@ $country = '';
     <div class="slider offers__slider" id="offers_four">
       <div class="slider__container">
       <?php  
-              foreach ($objectChinaDecode->results as $key => $value) {
-                get_template_part( 'template-parts/card', 'slide-offer', $value );
-              }?>
+          foreach ($objectChinaDecode->results as $key => $value) {
+            get_template_part( 'template-parts/card', 'slide-offer', $value );
+          }
+      ?>
       </div>
     </div>
   </div>

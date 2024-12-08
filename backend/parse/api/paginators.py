@@ -59,5 +59,4 @@ class CarAdPagination(PageNumberPagination):
             'current_page': self.page.number,
             'pages_data': self.get_html_context(),
             'results': data
-
         })

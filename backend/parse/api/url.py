@@ -15,5 +15,4 @@ urlpatterns = [
     # path('models/', AllModelsByBrand.as_view(), name='all_models_by_brand'),
     path('currencies/', get_currency_list),
     path('<str:item>/', get_field_lists),
-
 ]
